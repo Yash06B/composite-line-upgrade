@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype Request - Composite Line Upgrade</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-left">
+                <div class="logo-icon"><span class="material-icons-outlined">layers</span></div>
+                <div class="header-titles">
+                    <h1>Composite Line Upgrade</h1>
+                    <span class="subtitle">Customer Company Name</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <span class="invited-by">Invited by: &lt;Salesperson Name&gt;</span>
+                <div class="verified-badge"><span class="material-icons-outlined">open_in_new</span> Verified Access
+                </div>
+                <div class="status-badge active">Active</div>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <main class="content-area">
+                <div class="query-card-container">
+                    <div class="query-card glow-border">
+                        <div class="query-content">
+                            <h2>Request a Prototype</h2>
+                            <p class="helper-text" style="color: #666; margin-bottom: 2rem;">Start your physical
+                                validation process.</p>
+
+                            <!-- Simple Form Interface -->
+                            <div
+                                style="display: flex; flex-direction: column; gap: 1rem; max-width: 400px; margin: 0 auto;">
+                                <input type="text" placeholder="Project / Line Reference"
+                                    style="padding: 1rem; border-radius: 8px; border: 1px solid #ddd; background: #f9f9f9; font-family: inherit;">
+                                <input type="text" placeholder="Required Date"
+                                    style="padding: 1rem; border-radius: 8px; border: 1px solid #ddd; background: #f9f9f9; font-family: inherit;">
+                                <textarea placeholder="Specific Requirements / Dimensions" rows="3"
+                                    style="padding: 1rem; border-radius: 8px; border: 1px solid #ddd; background: #f9f9f9; font-family: inherit; resize: none;"></textarea>
+                                <button class="chip"
+                                    style="background: var(--accent-cyan); color: #000; font-weight: 600; justify-content: center; border: none; box-shadow: 0 4px 10px rgba(0, 229, 255, 0.3);">
+                                    Submit Request
+                                </button>
+                            </div>
+
+                            <div class="verified-footer">
+                                <span class="material-icons-outlined">flash_on</span>
+                                Express Fab Available
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="bottom-nav">
+                    <button class="nav-item">Overview</button>
+                    <button class="nav-item">Resources</button>
+                    <a href="index.html" class="nav-item" style="text-decoration:none; text-align:center;">Q&A
+                        History</a>
+                    <button class="nav-item">Request Support</button>
+                </nav>
+            </main>
+
+            <aside class="sidebar-right">
+                <div class="sidebar-buttons">
+                    <a href="datasheets.html" class="sidebar-btn" style="text-decoration: none;">
+                        <span class="material-icons-outlined">hexagon</span> Datasheets
+                    </a>
+                    <a href="tds-msds.html" class="sidebar-btn" style="text-decoration: none;">
+                        <span class="material-icons-outlined">no_encryption</span> (TDS / MSDS)
+                    </a>
+                    <a href="case-studies.html" class="sidebar-btn" style="text-decoration: none;">
+                        <span class="material-icons-outlined">all_inclusive</span> Case Studies
+                    </a>
+                    <a href="application-videos.html" class="sidebar-btn" style="text-decoration: none;">
+                        <span class="material-icons-outlined">hexagon</span> Application Videos
+                    </a>
+                    <a href="design-guidelines.html" class="sidebar-btn" style="text-decoration: none;">
+                        <span class="material-icons-outlined">hexagon</span> Design Guidelines
+                    </a>
+                    <a href="prototype-request.html" class="sidebar-btn active glow-effect"
+                        style="text-decoration: none;">
+                        <span class="material-icons-outlined">hexagon</span> Prototype Request
+                    </a>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
