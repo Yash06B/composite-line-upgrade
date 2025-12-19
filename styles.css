@@ -48,38 +48,7 @@ body {
     padding: 0;
 }
 
-/* ... existing header code ... */
 
-/* Main Layout */
-.main-layout {
-    display: flex;
-    flex: 1;
-    /* Removed overflow: hidden to allow page to grow */
-}
-
-.content-area {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    padding-bottom: 2rem;
-    /* Removed internal scroll logic, now uses body scroll */
-}
-
-/* Sidebar */
-.sidebar-right {
-    width: 300px;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-left: 1px solid rgba(255, 255, 255, 0.05);
-    /* Make sidebar follow the user */
-    position: sticky;
-    top: 0;
-    height: 100vh;
-}
 
 /* Header */
 .app-header {
@@ -152,19 +121,14 @@ body {
 .main-layout {
     display: flex;
     flex: 1;
-    min-height: 0;
-    /* Critical for nested scrollbars */
-    overflow: hidden;
-    /* FORCE children to scroll internally if they are too tall */
 }
 
 .content-area {
     flex: 1;
-    display: block;
-    /* Switch to block to simplify overflow logic */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
-    overflow-y: auto;
-    height: 100%;
     padding: 2rem 0;
 }
 
