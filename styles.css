@@ -164,9 +164,13 @@ body {
     border-radius: 24px;
     text-align: center;
     position: relative;
-    /* Massive glowing aurora effect: Tight cyan glow + Wide ambient dispersion */
-    box-shadow: 0 0 60px rgba(0, 229, 255, 0.6), 0 0 120px rgba(0, 229, 255, 0.3);
-    border: 3px solid var(--accent-cyan);
+    /* Layered Neon Glow: Tight Source -> Medium Bloom -> Wide Ambient */
+    box-shadow:
+        0 0 15px rgba(0, 229, 255, 0.7),
+        0 0 50px rgba(0, 229, 255, 0.4),
+        0 0 100px rgba(0, 229, 255, 0.2);
+    border: 2px solid var(--accent-cyan);
+    /* Slightly thinner for elegance */
 }
 
 /* Remove the old pseudo-element gradient border since we use a real border now */
