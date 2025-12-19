@@ -32,17 +32,53 @@ body {
     font-family: var(--font-main);
     background: radial-gradient(circle at 50% 30%, var(--bg-dark-end) 0%, var(--bg-dark-start) 90%);
     color: var(--text-white);
-    height: 100vh;
-    overflow: hidden;
-    /* App-like feel */
+    min-height: 100vh;
+    /* Allow growing */
+    overflow-x: hidden;
+    /* Prevent horizontal scroll only */
+    /* Removed overflow: hidden to allow normal scrolling */
 }
 
 /* App Container */
 .app-container {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 100vh;
+    /* Allow growing */
     padding: 0;
+}
+
+/* ... existing header code ... */
+
+/* Main Layout */
+.main-layout {
+    display: flex;
+    flex: 1;
+    /* Removed overflow: hidden to allow page to grow */
+}
+
+.content-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-bottom: 2rem;
+    /* Removed internal scroll logic, now uses body scroll */
+}
+
+/* Sidebar */
+.sidebar-right {
+    width: 300px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    /* Make sidebar follow the user */
+    position: sticky;
+    top: 0;
+    height: 100vh;
 }
 
 /* Header */
@@ -282,6 +318,10 @@ body {
     flex-direction: column;
     justify-content: center;
     border-left: 1px solid rgba(255, 255, 255, 0.05);
+    /* Make sidebar follow the user */
+    position: sticky;
+    top: 0;
+    height: 100vh;
 }
 
 .sidebar-buttons {
