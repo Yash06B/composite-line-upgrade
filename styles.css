@@ -318,3 +318,90 @@ body {
 .active-indicator {
     box-shadow: 0 0 10px var(--accent-cyan);
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        overflow: auto; /* Enable scrolling on mobile */
+        height: auto;
+    }
+
+    .app-container {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .app-header {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .invited-by {
+        display: none; /* Hide on very small screens to save space */
+    }
+
+    .main-layout {
+        flex-direction: column;
+    }
+
+    .sidebar-right {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 1.5rem;
+        order: 2; /* Move sidebar to bottom */
+    }
+
+    .content-area {
+        padding: 1rem;
+        order: 1;
+    }
+
+    .query-card-container {
+        width: 95%;
+        margin-top: 1rem;
+    }
+
+    .query-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .query-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .bottom-nav {
+        width: 95%;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .nav-item {
+        font-size: 0.85rem;
+        padding: 0.6rem 0;
+    }
+    
+    .active-indicator {
+        display: none; /* Simplifies nav on mobile */
+    }
+    
+    .nav-item.active {
+        border-bottom: 2px solid var(--accent-cyan-dim);
+    }
+
+    .footer-note {
+        position: static;
+        margin-top: 2rem;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+}
