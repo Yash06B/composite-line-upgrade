@@ -164,13 +164,16 @@ body {
     border-radius: 24px;
     text-align: center;
     position: relative;
-    /* Layered Neon Glow: Tight Source -> Medium Bloom -> Wide Ambient */
+    /* MAXIMUM OVERDRIVE GLOW: Brighter core + Massive spread */
     box-shadow:
-        0 0 15px rgba(0, 229, 255, 0.7),
-        0 0 50px rgba(0, 229, 255, 0.4),
-        0 0 100px rgba(0, 229, 255, 0.2);
-    border: 2px solid var(--accent-cyan);
-    /* Slightly thinner for elegance */
+        0 0 30px rgba(0, 229, 255, 0.9),
+        /* Intense core */
+        0 0 100px rgba(0, 229, 255, 0.6),
+        /* Bright bloom */
+        0 0 200px rgba(0, 229, 255, 0.4);
+    /* Huge ambient light */
+    border: 4px solid var(--accent-cyan);
+    /* Thicker border as requested */
 }
 
 /* Remove the old pseudo-element gradient border since we use a real border now */
