@@ -164,10 +164,9 @@ body {
     border-radius: 24px;
     text-align: center;
     position: relative;
-    /* Stronger inner glow + outer drop shadow */
-    box-shadow: 0 0 40px rgba(0, 229, 255, 0.2);
+    /* Massive glowing aurora effect: Tight cyan glow + Wide ambient dispersion */
+    box-shadow: 0 0 60px rgba(0, 229, 255, 0.6), 0 0 120px rgba(0, 229, 255, 0.3);
     border: 3px solid var(--accent-cyan);
-    /* explicit border matching image */
 }
 
 /* Remove the old pseudo-element gradient border since we use a real border now */
