@@ -243,6 +243,8 @@ body {
     justify-content: space-between;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     /* Subtle depth */
+    overflow: hidden;
+    /* Clip the glow to stay within rounded corners */
 }
 
 .nav-item {
