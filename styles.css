@@ -257,6 +257,11 @@ body {
     position: relative;
     z-index: 1;
     transition: color 0.3s;
+    text-align: center;
+    /* Ensure text is centered */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-item:hover {
@@ -271,17 +276,17 @@ body {
 /* Special bottom bar for nav */
 .active-indicator {
     position: absolute;
-    bottom: 0px;
+    bottom: 3px;
+    /* Slightly above the bottom edge */
     height: 4px;
-    /* Thicker line */
     background: var(--accent-cyan);
     width: 25%;
     left: 50%;
-    /* Position for 'Q&A History' */
+    /* Position for 'Q&A History' (3rd item) */
     transform: translateX(0);
-    border-radius: 4px 4px 0 0;
-    box-shadow: 0 -2px 15px rgba(0, 229, 255, 0.8), 0 0 5px var(--accent-cyan);
-    /* Strong neon glow */
+    border-radius: 8px;
+    /* Fully rounded corners to match nav bar curvature */
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.8), 0 0 5px var(--accent-cyan);
     transition: all 0.3s ease;
 }
 
