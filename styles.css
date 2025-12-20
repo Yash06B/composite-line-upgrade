@@ -172,7 +172,8 @@ body {
         /* Bright bloom */
         0 0 200px rgba(0, 229, 255, 0.4);
     /* Huge ambient light */
-    border: 4px solid var(--accent-cyan);
+    border: 6px solid var(--accent-cyan);
+    /* BOLD border */
     /* Thicker border as requested */
 }
 
