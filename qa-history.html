@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Composite Line Upgrade - Dashboard</title>
+    <title>Q&A History - Composite Line Upgrade</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
@@ -57,14 +57,14 @@
 
             <!-- Right: Action Menu -->
             <div class="card actions-card">
-                <div class="action-item">
+                <a href="index.html" class="action-item">
                     <div class="action-left">
                         <span class="material-icons-outlined icon-teal">group</span>
                         Participants (3)
                     </div>
                     <span class="material-icons-outlined icon-gray">chevron_right</span>
-                </div>
-                <a href="qa-history.html" class="action-item">
+                </a>
+                <a href="qa-history.html" class="action-item" style="background: #f1f5f9;">
                     <div class="action-left">
                         <span class="material-icons-outlined icon-blue">history_edu</span>
                         Q&A History
@@ -74,7 +74,7 @@
                 <a href="request-support.html" class="action-item">
                     <div class="action-left">
                         <span class="material-icons-outlined icon-teal">person_add</span>
-                        Request Support <!-- Mapped from 'Invite Stakeholder' in img, serves similiar purpose -->
+                        Request Support
                     </div>
                     <span class="material-icons-outlined icon-gray">chevron_right</span>
                 </a>
@@ -89,67 +89,66 @@
 
         </div>
 
-        <!-- Middle: Search / Ask Question -->
+        <!-- Middle: Q&A List -->
         <div class="card search-section">
-            <div class="search-title">Ask a question</div>
-            <div class="search-field-container">
-                <input type="text" class="search-input"
-                    placeholder="Ask a question related to this project's application, specifications, or evaluation">
-            </div>
-            <div class="suggestion-pills">
-                <button class="pill">Show me datasheets</button>
-                <button class="pill">Explain curing process</button>
-                <button class="pill">What's the compatible material?</button>
-            </div>
-        </div>
-
-        <!-- Bottom: Relevant Info -->
-        <div class="bottom-section">
-            <div class="tabs-header">
-                <button class="tab-btn active">Overview</button>
-                <!-- <button class="tab-btn">Recent Activity</button> -->
+            <div class="search-title">Q&A History</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem; padding-left: 0.5rem;">
+                Previous questions asked by your team and verified answers.
             </div>
 
-            <div class="card" style="border:none; box-shadow:none; padding:0; background:transparent;">
-                <div class="card-header"
-                    style="text-transform:none; color:var(--text-primary); font-size:1.1rem; margin-bottom:1rem;">
-                    Relevant verified information
+            <!-- Q&A Items -->
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+
+                <!-- Q1 -->
+                <div style="background: #f8fafc; border-radius: 8px; padding: 1.5rem; border: 1px solid #e2e8f0;">
+                    <div style="display: flex; align-items:flex-start; gap: 1rem; margin-bottom: 1rem;">
+                        <span class="material-icons-outlined" style="color: var(--text-secondary);">help_outline</span>
+                        <div>
+                            <div style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem;">What is
+                                the recommended curing temperature?</div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">Asked by Jane Doe • 2 days
+                                ago</div>
+                        </div>
+                    </div>
+                    <div
+                        style="background: white; border-left: 3px solid var(--accent-teal); padding: 1rem; border-radius: 0 4px 4px 0; margin-left: 2rem;">
+                        <div
+                            style="font-weight: 600; font-size: 0.9rem; color: var(--accent-teal); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <span class="material-icons-outlined" style="font-size: 1rem;">verified</span> Verified
+                            Answer
+                        </div>
+                        <div style="font-size: 0.95rem; color: var(--text-primary);">
+                            The recommended curing temperature for this specific composite bond is 120°C for 45 minutes
+                            to achieve optimal structural integrity.
+                        </div>
+                    </div>
                 </div>
 
-                <div class="content-list">
-                    <!-- Item 1 -->
-                    <a href="#" class="file-item">
-                        <div class="file-info">
-                            <span class="material-icons-outlined file-icon">article</span>
-                            Curing Process - Application Guide
+                <!-- Q2 -->
+                <div style="background: #f8fafc; border-radius: 8px; padding: 1.5rem; border: 1px solid #e2e8f0;">
+                    <div style="display: flex; align-items:flex-start; gap: 1rem; margin-bottom: 1rem;">
+                        <span class="material-icons-outlined" style="color: var(--text-secondary);">help_outline</span>
+                        <div>
+                            <div style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem;">Is the
+                                primer compatible with aluminum substrates?</div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">Asked by John Smith • 4 days
+                                ago</div>
                         </div>
-                        <div class="view-action">
-                            View PDF <span class="material-icons-outlined">chevron_right</span>
+                    </div>
+                    <div
+                        style="background: white; border-left: 3px solid var(--accent-teal); padding: 1rem; border-radius: 0 4px 4px 0; margin-left: 2rem;">
+                        <div
+                            style="font-weight: 600; font-size: 0.9rem; color: var(--accent-teal); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <span class="material-icons-outlined" style="font-size: 1rem;">verified</span> Verified
+                            Answer
                         </div>
-                    </a>
-
-                    <!-- Item 2 -->
-                    <a href="tds-msds.html" class="file-item">
-                        <div class="file-info">
-                            <span class="material-icons-outlined file-icon">science</span>
-                            TDS - Product XYZ
+                        <div style="font-size: 0.95rem; color: var(--text-primary);">
+                            Yes, the primer is fully compatible with 6061 and 7075 aluminum alloys, provided the surface
+                            has been properly degreased.
                         </div>
-                        <div class="view-action">
-                            View PDF <span class="material-icons-outlined">chevron_right</span>
-                        </div>
-                    </a>
-
-                    <!-- Item 3 -->
-                    <a href="case-studies.html" class="file-item">
-                        <div class="file-info">
-                            <span class="material-icons-outlined file-icon">auto_stories</span>
-                            Automotive Case Study - Similar Line Upgrade
-                        </div>
-                        <div class="view-action">
-                            View PDF <span class="material-icons-outlined">chevron_right</span>
-                        </div>
-                    </a>
+                    </div>
                 </div>
+
             </div>
         </div>
 
