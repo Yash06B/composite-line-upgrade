@@ -63,14 +63,36 @@
                     Your internal team members with verified access can view this space.
                 </div>
 
-                <!-- Bottom Navigation -->
-                <nav class="bottom-nav">
-                    <a href="overview.html" class="nav-item" style="text-decoration:none;">Overview</a>
-                    <a href="resources.html" class="nav-item" style="text-decoration:none;">Resources</a>
-                    <a href="index.html" class="nav-item active" style="text-decoration:none;">Q&A History</a>
-                    <a href="request-support.html" class="nav-item" style="text-decoration:none;">Request Support</a>
-                    <div class="active-indicator"></div>
+                <!-- Tab Navigation -->
+                <nav class="tab-nav-container">
+                    <a href="overview.html" class="tab-link active">Overview</a>
+                    <a href="resources.html" class="tab-link">Resources</a>
+                    <a href="index.html" class="tab-link">Q&A History</a>
+                    <a href="request-support.html" class="tab-link">Request Support</a>
                 </nav>
+
+                <!-- Tab Content Container (for the look of the image) -->
+                <div class="tab-content-area"
+                    style="width: 60%; margin: 1rem auto; background: rgba(255,255,255,0.03); border-radius: 0 12px 12px 12px; padding: 1.5rem; border: 1px solid rgba(255,255,255,0.05);">
+                    <div class="content-list-item"
+                        style="display: flex; align-items: center; justify-content: space-between; padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 0.5rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span class="material-icons-outlined" style="color: var(--accent-cyan);">description</span>
+                            <span style="color: #eee;">Curing Process - Application Guide</span>
+                        </div>
+                        <span class="material-icons-outlined"
+                            style="color: #666; font-size: 1.2rem;">chevron_right</span>
+                    </div>
+                    <div class="content-list-item"
+                        style="display: flex; align-items: center; justify-content: space-between; padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 0.5rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span class="material-icons-outlined" style="color: #aaa;">science</span>
+                            <span style="color: #eee;">TDS - Product XYZ</span>
+                        </div>
+                        <span class="material-icons-outlined"
+                            style="color: #666; font-size: 1.2rem;">chevron_right</span>
+                    </div>
+                </div>
 
                 <div class="footer-note">
                     Powered by structured, verified content. No hallucinations.
