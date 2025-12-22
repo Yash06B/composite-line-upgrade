@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Request Support - Composite Line Upgrade</title>
+    <title>Participants - Composite Line Upgrade</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
@@ -57,7 +57,7 @@
 
             <!-- Right: Action Menu -->
             <div class="card actions-card">
-                <a href="participants.html" class="action-item">
+                <a href="participants.html" class="action-item" style="background: #f1f5f9;">
                     <div class="action-left">
                         <span class="material-icons-outlined icon-teal">group</span>
                         Participants (3)
@@ -71,7 +71,7 @@
                     </div>
                     <span class="material-icons-outlined icon-gray">chevron_right</span>
                 </a>
-                <a href="request-support.html" class="action-item" style="background: #f1f5f9;">
+                <a href="request-support.html" class="action-item">
                     <div class="action-left">
                         <span class="material-icons-outlined icon-teal">person_add</span>
                         Request Support
@@ -89,56 +89,59 @@
 
         </div>
 
-        <!-- Middle: Request Support Section -->
+        <!-- Middle: Participants List -->
         <div class="card search-section">
-            <div class="search-title">Request Support</div>
+            <div class="search-title">Participants</div>
             <div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem; padding-left: 0.5rem;">
-                Get specialized help from our engineering team.
+                Verified team members with access to this project space.
             </div>
 
-            <div class="support-grid">
-                <div class="support-action-card">
-                    <span class="material-icons-outlined support-icon">build</span>
-                    <span class="support-title">Technical Support</span>
-                    <span class="support-desc">Issues with application or process</span>
-                </div>
-                <div class="support-action-card">
-                    <span class="material-icons-outlined support-icon"
-                        style="color: var(--accent-teal);">shopping_cart</span>
-                    <span class="support-title">Sales Inquiry</span>
-                    <span class="support-desc">Pricing and availability</span>
-                </div>
-                <div class="support-action-card">
-                    <span class="material-icons-outlined support-icon" style="color: #6366f1;">calendar_today</span>
-                    <span class="support-title">Schedule Call</span>
-                    <span class="support-desc">Book time with an engineer</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Bottom: Relevant Info (Optional or kept for consisteny) -->
-        <div class="bottom-section">
-            <div class="tabs-header">
-                <button class="tab-btn active">Overview</button>
-            </div>
-
-            <div class="card" style="border:none; box-shadow:none; padding:0; background:transparent;">
-                <div class="card-header"
-                    style="text-transform:none; color:var(--text-primary); font-size:1.1rem; margin-bottom:1rem;">
-                    Relevant verified information
-                </div>
-
-                <div class="content-list">
-                    <!-- Item 1 -->
-                    <a href="#" class="file-item">
-                        <div class="file-info">
-                            <span class="material-icons-outlined file-icon">article</span>
-                            Curing Process - Application Guide
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <!-- User 1 -->
+                <div
+                    style="display: flex; align-items: center; justify-content: space-between; padding: 1rem; background: white; border-radius: 8px; border: 1px solid #e2e8f0;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div
+                            style="width: 40px; height: 40px; background: #e0f2fe; color: #0284c7; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">
+                            JS</div>
+                        <div>
+                            <div style="font-weight: 600; color: var(--text-primary);">John Smith</div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">Sales Engineer (Host)</div>
                         </div>
-                        <div class="view-action">
-                            View PDF <span class="material-icons-outlined">chevron_right</span>
+                    </div>
+                    <div class="badge-active"
+                        style="padding: 0.2rem 0.8rem; font-size: 0.8rem; background: #dcfce7; color: #166534;">Online
+                    </div>
+                </div>
+
+                <!-- User 2 -->
+                <div
+                    style="display: flex; align-items: center; justify-content: space-between; padding: 1rem; background: white; border-radius: 8px; border: 1px solid #e2e8f0;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div
+                            style="width: 40px; height: 40px; background: #f3e8ff; color: #7e22ce; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">
+                            JD</div>
+                        <div>
+                            <div style="font-weight: 600; color: var(--text-primary);">Jane Doe</div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">Application Specialist</div>
                         </div>
-                    </a>
+                    </div>
+                    <span class="material-icons-outlined" style="color: #cbd5e1;">check_circle</span>
+                </div>
+
+                <!-- User 3 -->
+                <div
+                    style="display: flex; align-items: center; justify-content: space-between; padding: 1rem; background: white; border-radius: 8px; border: 1px solid #e2e8f0;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div
+                            style="width: 40px; height: 40px; background: #ffedd5; color: #ca8a04; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">
+                            AC</div>
+                        <div>
+                            <div style="font-weight: 600; color: var(--text-primary);">Alex Chen</div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">Customer Lead</div>
+                        </div>
+                    </div>
+                    <span class="material-icons-outlined" style="color: #cbd5e1;">check_circle</span>
                 </div>
             </div>
         </div>
