@@ -6,113 +6,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Case Studies - Composite Line Upgrade</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 </head>
 
 <body>
+
     <div class="app-container">
+
         <!-- Header -->
         <header class="app-header">
-            <div class="header-left">
+            <a href="index.html" class="brand-section" style="text-decoration: none; color: inherit;">
                 <div class="logo-icon">
                     <span class="material-icons-outlined">layers</span>
                 </div>
-                <div class="header-titles">
+                <div class="brand-text">
                     <h1>Composite Line Upgrade</h1>
-                    <span class="subtitle">Customer Company Name</span>
+                    <div class="company-name">Customer Company Name</div>
                 </div>
-            </div>
-            <div class="header-right">
-                <span class="invited-by">Invited by: &lt;Salesperson Name&gt;</span>
-                <div class="verified-badge">
-                    <span class="material-icons-outlined">open_in_new</span>
+            </a>
+
+            <div class="header-meta">
+                <div class="meta-item">Invited by: John Smith</div>
+                <div class="meta-item badge-verified">
+                    <span class="material-icons-outlined" style="font-size: 1.2rem;">check_box</span>
                     Verified Access
                 </div>
-                <div class="status-badge active">Active</div>
+                <div class="badge-active">Active ></div>
             </div>
         </header>
 
-        <div class="main-layout">
-            <!-- Main Content Area -->
-            <main class="content-area">
+        <!-- Top Grid: Context & Actions -->
+        <div class="dashboard-grid">
 
-                <!-- Central Query Card (Content Variant) -->
-                <div class="query-card-container">
-                    <div class="query-card glow-border">
-                        <div class="query-content">
-                            <h2>Success Stories & Case Studies</h2>
-                            <p class="helper-text" style="color: #666; margin-bottom: 2rem;">Explore how other
-                                facilities optimized their composite lines.</p>
+            <!-- Left: Project Context -->
+            <div class="card context-card">
+                <div class="card-header">
+                    <span class="material-icons-outlined">feed</span>
+                    Project Context
+                </div>
+                <div class="context-details">
+                    <h3>Application: Structural Bonding</h3>
+                    <h3>Industry: Automotive</h3>
+                </div>
+                <div class="context-info">
+                    This room contains verified information selected for this project.
+                    <br>All questions and answers are shared with participants.
+                </div>
+            </div>
 
-                            <div class="suggestion-chips" style="flex-direction: column; align-items: center;">
-                                <button class="chip"
-                                    style="width: 100%; max-width: 300px; display: flex; justify-content: space-between; align-items: center;">
-                                    AutoParts Mfg - 20% Rate Increase
-                                    <span class="material-icons-outlined">arrow_forward</span>
-                                </button>
-                                <button class="chip"
-                                    style="width: 100%; max-width: 300px; display: flex; justify-content: space-between; align-items: center;">
-                                    Aerospace client - Curing Time
-                                    <span class="material-icons-outlined">arrow_forward</span>
-                                </button>
-                                <button class="chip"
-                                    style="width: 100%; max-width: 300px; display: flex; justify-content: space-between; align-items: center;">
-                                    Video: Line Upgrade Walkthrough
-                                    <span class="material-icons-outlined">play_circle</span>
-                                </button>
-                            </div>
-
-                            <div class="verified-footer">
-                                <span class="material-icons-outlined">verified_user</span>
-                                Verified Results
-                            </div>
-                        </div>
+            <!-- Right: Action Menu -->
+            <div class="card actions-card">
+                <a href="participants.html" class="action-item">
+                    <div class="action-left">
+                        <span class="material-icons-outlined icon-teal">group</span>
+                        Participants (3)
                     </div>
-                </div>
+                    <span class="material-icons-outlined icon-gray">chevron_right</span>
+                </a>
+                <a href="qa-history.html" class="action-item">
+                    <div class="action-left">
+                        <span class="material-icons-outlined icon-blue">history_edu</span>
+                        Q&A History
+                    </div>
+                    <span class="material-icons-outlined icon-gray">chevron_right</span>
+                </a>
+                <a href="request-support.html" class="action-item">
+                    <div class="action-left">
+                        <span class="material-icons-outlined icon-teal">person_add</span>
+                        Request Support
+                    </div>
+                    <span class="material-icons-outlined icon-gray">chevron_right</span>
+                </a>
+                <a href="resources.html" class="action-item" style="background: #f1f5f9;">
+                    <div class="action-left">
+                        <span class="material-icons-outlined icon-blue">description</span>
+                        Resources
+                    </div>
+                    <span class="material-icons-outlined icon-gray">chevron_right</span>
+                </a>
+            </div>
 
-                <!-- Bottom Navigation -->
-                <nav class="bottom-nav">
-                    <a href="overview.html" class="nav-item" style="text-decoration:none;">Overview</a>
-                    <a href="resources.html" class="nav-item" style="text-decoration:none;">Resources</a>
-                    <a href="index.html" class="nav-item" style="text-decoration:none;">Q&A History</a>
-                    <a href="request-support.html" class="nav-item" style="text-decoration:none;">Request Support</a>
-                    <div class="active-indicator" style="display: none;"></div>
-                </nav>
-            </main>
-
-            <!-- Right Sidebar -->
-            <aside class="sidebar-right">
-                <div class="sidebar-buttons">
-                    <a href="datasheets.html" class="sidebar-btn" style="text-decoration: none;">
-                        <span class="material-icons-outlined">hexagon</span>
-                        Datasheets
-                    </a>
-                    <a href="tds-msds.html" class="sidebar-btn" style="text-decoration: none;">
-                        <span class="material-icons-outlined">no_encryption</span>
-                        (TDS / MSDS)
-                    </a>
-                    <a href="case-studies.html" class="sidebar-btn active glow-effect" style="text-decoration: none;">
-                        <span class="material-icons-outlined">all_inclusive</span>
-                        Case Studies
-                    </a>
-                    <a href="application-videos.html" class="sidebar-btn" style="text-decoration: none;">
-                        <span class="material-icons-outlined">hexagon</span>
-                        Application Videos
-                    </a>
-                    <a href="design-guidelines.html" class="sidebar-btn" style="text-decoration: none;">
-                        <span class="material-icons-outlined">hexagon</span>
-                        Design Guidelines
-                    </a>
-                    <a href="prototype-request.html" class="sidebar-btn" style="text-decoration: none;">
-                        <span class="material-icons-outlined">hexagon</span>
-                        Prototype Request
-                    </a>
-                </div>
-            </aside>
         </div>
+
+        <!-- Middle: Content Section -->
+        <div class="card search-section">
+            <div class="search-title">Success Stories & Case Studies</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem; padding-left: 0.5rem;">
+                Explore how other facilities optimized their composite lines.
+            </div>
+
+            <div class="content-list">
+                <!-- Item 1 -->
+                <a href="#" class="file-item">
+                    <div class="file-info">
+                        <span class="material-icons-outlined file-icon">auto_stories</span>
+                        AutoParts Mfg - 20% Rate Increase
+                    </div>
+                    <div class="view-action">
+                        Read Case Study <span class="material-icons-outlined">arrow_forward</span>
+                    </div>
+                </a>
+
+                <!-- Item 2 -->
+                <a href="#" class="file-item">
+                    <div class="file-info">
+                        <span class="material-icons-outlined file-icon">flight_takeoff</span>
+                        Aerospace Client - Curing Time Opt.
+                    </div>
+                    <div class="view-action">
+                        Read Case Study <span class="material-icons-outlined">arrow_forward</span>
+                    </div>
+                </a>
+
+                <!-- Item 3 -->
+                <a href="application-videos.html" class="file-item">
+                    <div class="file-info">
+                        <span class="material-icons-outlined file-icon">play_circle</span>
+                        Video: Line Upgrade Walkthrough
+                    </div>
+                    <div class="view-action">
+                        Watch Video <span class="material-icons-outlined">open_in_new</span>
+                    </div>
+                </a>
+            </div>
+            <div class="verified-footer" style="margin-top: 1.5rem; padding-left:0.5rem;">
+                <span class="material-icons-outlined"
+                    style="font-size: 1.1rem; vertical-align:middle; margin-right: 0.3rem;">verified_user</span>
+                Verified Results
+            </div>
+        </div>
+
+        <footer class="app-footer">
+            Powered by structured verified content. No hallucinations.
+        </footer>
+
     </div>
-    <script src="script.js"></script>
+
 </body>
 
 </html>
