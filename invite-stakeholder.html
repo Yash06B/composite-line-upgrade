@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invite Stakeholder - Composite Line Upgrade</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <a href="index.html" class="brand-section" style="text-decoration: none; color: inherit;">
+                <div class="logo-icon">
+                    <span class="material-icons-outlined">layers</span>
+                </div>
+                <div class="brand-text">
+                    <h1>Composite Line Upgrade</h1>
+                    <div class="company-name">Customer Company Name</div>
+                </div>
+            </a>
+            <div class="header-meta">
+                <div class="meta-item">Invited by: John Smith</div>
+                <div class="meta-item badge-verified">
+                    <span class="material-icons-outlined" style="font-size: 1.2rem;">check_box</span> Verified Access
+                </div>
+                <div class="badge-active">Active ></div>
+            </div>
+        </header>
+
+        <!-- Top Grid: Context & Actions -->
+        <div class="dashboard-grid">
+            <!-- Left: Project Context -->
+            <div class="card context-card">
+                <div class="card-header"><span class="material-icons-outlined">feed</span> Project Context</div>
+                <div class="context-details">
+                    <h3>Application: Structural Bonding</h3>
+                    <h3>Industry: Automotive</h3>
+                </div>
+                <div class="context-info">
+                    This room contains verified information selected for this project.<br>All questions and answers are
+                    shared with participants.
+                </div>
+            </div>
+
+            <!-- Right: Action Menu -->
+            <div class="card actions-card">
+                <a href="participants.html" class="action-item">
+                    <div class="action-left"><span class="material-icons-outlined icon-teal">group</span> Participants
+                        (3)</div>
+                    <span class="material-icons-outlined icon-gray">chevron_right</span>
+                </a>
+                <a href="qa-history.html" class="action-item">
+                    <div class="action-left"><span class="material-icons-outlined icon-blue">history_edu</span> Q&A
+                        History</div>
+                    <span class="material-icons-outlined icon-gray">chevron_right</span>
+                </a>
+                <a href="invite-stakeholder.html" class="action-item" style="background: #f1f5f9;">
+                    <div class="action-left"><span class="material-icons-outlined icon-teal">person_add</span> Invite
+                        Stakeholder</div>
+                    <span class="material-icons-outlined icon-gray">chevron_right</span>
+                </a>
+                <a href="resources.html" class="action-item">
+                    <div class="action-left"><span class="material-icons-outlined icon-blue">description</span>
+                        Resources</div>
+                    <span class="material-icons-outlined icon-gray">chevron_right</span>
+                </a>
+                <a href="request-support.html" class="action-item">
+                    <div class="action-left"><span class="material-icons-outlined icon-teal">support_agent</span>
+                        Request Support</div>
+                    <span class="material-icons-outlined icon-gray">chevron_right</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Middle: Invite Form -->
+        <div class="card search-section">
+            <div class="search-title">Invite Stakeholder</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem; padding-left: 0.5rem;">
+                Grant verified project access to a team member.
+            </div>
+
+            <div style="max-width: 500px; margin: 0 auto; display:flex; flex-direction:column; gap:1rem;">
+                <input type="email" placeholder="Colleague's Work Email" class="search-input"
+                    style="background:#f1f5f9; padding: 1rem; border-radius:8px;">
+                <div style="display:flex; gap:1rem;">
+                    <input type="text" placeholder="First Name" class="search-input"
+                        style="background:#f1f5f9; padding: 1rem; border-radius:8px; width:50%;">
+                    <input type="text" placeholder="Last Name" class="search-input"
+                        style="background:#f1f5f9; padding: 1rem; border-radius:8px; width:50%;">
+                </div>
+                <button class="pill"
+                    style="width:100%; text-align:center; background: var(--accent-teal); color:white; padding:1rem; border-radius:8px; margin-top:0.5rem;">
+                    Send Invite
+                </button>
+            </div>
+        </div>
+
+        <footer class="app-footer">Powered by structured verified content. No hallucinations.</footer>
+    </div>
+</body>
+
+</html>
