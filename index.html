@@ -4,133 +4,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Composite Line Upgrade</title>
+    <title>Composite Line Upgrade - Dashboard</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Using Google Material Icons for generic icons if needed, though SVG is preferred for specific looks -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 </head>
 
 <body>
+
     <div class="app-container">
+
         <!-- Header -->
         <header class="app-header">
-            <div class="header-left">
+            <div class="brand-section">
                 <div class="logo-icon">
                     <span class="material-icons-outlined">layers</span>
                 </div>
-                <div class="header-titles">
+                <div class="brand-text">
                     <h1>Composite Line Upgrade</h1>
-                    <span class="subtitle">Customer Company Name</span>
+                    <div class="company-name">Customer Company Name</div>
                 </div>
             </div>
-            <div class="header-right">
-                <span class="invited-by">Invited by: &lt;Salesperson Name&gt;</span>
-                <div class="verified-badge">
-                    <span class="material-icons-outlined">open_in_new</span>
+
+            <div class="header-meta">
+                <div class="meta-item">Invited by: John Smith</div>
+                <div class="meta-item badge-verified">
+                    <span class="material-icons-outlined" style="font-size: 1.2rem;">check_box</span>
                     Verified Access
                 </div>
-                <div class="status-badge active">Active</div>
+                <div class="badge-active">Active ></div>
             </div>
         </header>
 
-        <div class="main-layout">
-            <!-- Main Content Area -->
-            <main class="content-area">
+        <!-- Top Grid: Context & Actions -->
+        <div class="dashboard-grid">
 
-                <!-- Central Query Card -->
-                <div class="query-card-container">
-                    <div class="query-card glow-border">
-                        <div class="query-content">
-                            <h2>Ask any question about the solution,<br>specifications, application, or next steps...
-                            </h2>
+            <!-- Left: Project Context -->
+            <div class="card context-card">
+                <div class="card-header">
+                    <span class="material-icons-outlined">feed</span>
+                    Project Context
+                </div>
+                <div class="context-details">
+                    <h3>Application: Structural Bonding</h3>
+                    <h3>Industry: Automotive</h3>
+                </div>
+                <div class="context-info">
+                    This room contains verified information selected for this project.
+                    <br>All questions and answers are shared with participants.
+                </div>
+            </div>
 
-                            <div class="suggestion-chips">
-                                <button class="chip">Show me datasheets</button>
-                                <button class="chip">Explain curing process</button>
-                                <button class="chip">What's the compatible material?</button>
-                            </div>
-
-                            <div class="verified-footer">
-                                <span class="material-icons-outlined">verified_user</span>
-                                Powered by verified content only.
-                            </div>
-                        </div>
+            <!-- Right: Action Menu -->
+            <div class="card actions-card">
+                <div class="action-item">
+                    <div class="action-left">
+                        <span class="material-icons-outlined icon-teal">group</span>
+                        Participants (3)
                     </div>
+                    <span class="material-icons-outlined icon-gray">chevron_right</span>
                 </div>
-
-                <div class="helper-text">
-                    Your internal team members with verified access can view this space.
-                </div>
-
-                <!-- Tab Navigation -->
-                <nav class="tab-nav-container">
-                    <a href="overview.html" class="tab-link active">Overview</a>
-                    <a href="resources.html" class="tab-link">Resources</a>
-                    <a href="index.html" class="tab-link">Q&A History</a>
-                    <a href="request-support.html" class="tab-link">Request Support</a>
-                </nav>
-
-                <!-- Tab Content Container (for the look of the image) -->
-                <div class="tab-content-area"
-                    style="width: 60%; margin: 1rem auto; background: rgba(255,255,255,0.03); border-radius: 0 12px 12px 12px; padding: 1.5rem; border: 1px solid rgba(255,255,255,0.05);">
-                    <div class="content-list-item"
-                        style="display: flex; align-items: center; justify-content: space-between; padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 0.5rem;">
-                        <div style="display: flex; align-items: center; gap: 1rem;">
-                            <span class="material-icons-outlined" style="color: var(--accent-cyan);">description</span>
-                            <span style="color: #eee;">Curing Process - Application Guide</span>
-                        </div>
-                        <span class="material-icons-outlined"
-                            style="color: #666; font-size: 1.2rem;">chevron_right</span>
+                <a href="index.html" class="action-item">
+                    <div class="action-left">
+                        <span class="material-icons-outlined icon-blue">history_edu</span>
+                        Q&A History
                     </div>
-                    <div class="content-list-item"
-                        style="display: flex; align-items: center; justify-content: space-between; padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 0.5rem;">
-                        <div style="display: flex; align-items: center; gap: 1rem;">
-                            <span class="material-icons-outlined" style="color: #aaa;">science</span>
-                            <span style="color: #eee;">TDS - Product XYZ</span>
-                        </div>
-                        <span class="material-icons-outlined"
-                            style="color: #666; font-size: 1.2rem;">chevron_right</span>
+                    <span class="material-icons-outlined icon-gray">chevron_right</span>
+                </a>
+                <a href="request-support.html" class="action-item">
+                    <div class="action-left">
+                        <span class="material-icons-outlined icon-teal">person_add</span>
+                        Request Support <!-- Mapped from 'Invite Stakeholder' in img, serves similiar purpose -->
                     </div>
-                </div>
+                    <span class="material-icons-outlined icon-gray">chevron_right</span>
+                </a>
+                <a href="resources.html" class="action-item">
+                    <div class="action-left">
+                        <span class="material-icons-outlined icon-blue">description</span>
+                        Resources
+                    </div>
+                    <span class="material-icons-outlined icon-gray">chevron_right</span>
+                </a>
+            </div>
 
-                <div class="footer-note">
-                    Powered by structured, verified content. No hallucinations.
-                </div>
-            </main>
-
-            <!-- Right Sidebar -->
-            <aside class="sidebar-right">
-                <div class="sidebar-buttons">
-                    <a href="datasheets.html" class="sidebar-btn" style="text-decoration: none;">
-                        <span class="material-icons-outlined">hexagon</span>
-                        Datasheets
-                    </a>
-                    <a href="tds-msds.html" class="sidebar-btn" style="text-decoration: none;">
-                        <span class="material-icons-outlined">no_encryption</span> <!-- Placeholder for shield/check -->
-                        (TDS / MSDS)
-                    </a>
-                    <a href="case-studies.html" class="sidebar-btn" style="text-decoration: none;">
-                        <span class="material-icons-outlined">all_inclusive</span> <!-- Placeholder for hexagon -->
-                        Case Studies
-                    </a>
-                    <a href="application-videos.html" class="sidebar-btn" style="text-decoration: none;">
-                        <span class="material-icons-outlined">hexagon</span>
-                        Application Videos
-                    </a>
-                    <a href="design-guidelines.html" class="sidebar-btn" style="text-decoration: none;">
-                        <span class="material-icons-outlined">hexagon</span>
-                        Design Guidelines
-                    </a>
-                    <a href="prototype-request.html" class="sidebar-btn" style="text-decoration: none;">
-                        <span class="material-icons-outlined">hexagon</span>
-                        Prototype Request
-                    </a>
-                </div>
-            </aside>
         </div>
+
+        <!-- Middle: Search / Ask Question -->
+        <div class="card search-section">
+            <div class="search-title">Ask a question</div>
+            <div class="search-field-container">
+                <input type="text" class="search-input"
+                    placeholder="Ask a question related to this project's application, specifications, or evaluation">
+            </div>
+            <div class="suggestion-pills">
+                <button class="pill">Show me datasheets</button>
+                <button class="pill">Explain curing process</button>
+                <button class="pill">What's the compatible material?</button>
+            </div>
+        </div>
+
+        <!-- Bottom: Relevant Info -->
+        <div class="bottom-section">
+            <div class="tabs-header">
+                <button class="tab-btn active">Overview</button>
+                <!-- <button class="tab-btn">Recent Activity</button> -->
+            </div>
+
+            <div class="card" style="border:none; box-shadow:none; padding:0; background:transparent;">
+                <div class="card-header"
+                    style="text-transform:none; color:var(--text-primary); font-size:1.1rem; margin-bottom:1rem;">
+                    Relevant verified information
+                </div>
+
+                <div class="content-list">
+                    <!-- Item 1 -->
+                    <a href="#" class="file-item">
+                        <div class="file-info">
+                            <span class="material-icons-outlined file-icon">article</span>
+                            Curing Process - Application Guide
+                        </div>
+                        <div class="view-action">
+                            View PDF <span class="material-icons-outlined">chevron_right</span>
+                        </div>
+                    </a>
+
+                    <!-- Item 2 -->
+                    <a href="tds-msds.html" class="file-item">
+                        <div class="file-info">
+                            <span class="material-icons-outlined file-icon">science</span>
+                            TDS - Product XYZ
+                        </div>
+                        <div class="view-action">
+                            View PDF <span class="material-icons-outlined">chevron_right</span>
+                        </div>
+                    </a>
+
+                    <!-- Item 3 -->
+                    <a href="case-studies.html" class="file-item">
+                        <div class="file-info">
+                            <span class="material-icons-outlined file-icon">auto_stories</span>
+                            Automotive Case Study - Similar Line Upgrade
+                        </div>
+                        <div class="view-action">
+                            View PDF <span class="material-icons-outlined">chevron_right</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer class="app-footer">
+            Powered by structured verified content. No hallucinations.
+        </footer>
+
     </div>
-    <script src="script.js"></script>
+
 </body>
 
 </html>
