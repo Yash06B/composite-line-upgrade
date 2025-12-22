@@ -338,6 +338,50 @@ body {
     color: var(--text-secondary);
 }
 
+/* --- Support Section --- */
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.support-action-card {
+    background: #f8fafc;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.support-action-card:hover {
+    background: white;
+    border-color: var(--accent-blue);
+    box-shadow: var(--shadow-card);
+    transform: translateY(-2px);
+}
+
+.support-icon {
+    font-size: 2rem;
+    color: var(--accent-blue);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.support-title {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.support-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
 /* --- Footer --- */
 .app-footer {
     text-align: center;

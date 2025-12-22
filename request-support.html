@@ -6,108 +6,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Request Support - Composite Line Upgrade</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 </head>
 
 <body>
+
     <div class="app-container">
+
         <!-- Header -->
         <header class="app-header">
-            <div class="header-left">
+            <div class="brand-section">
                 <div class="logo-icon">
                     <span class="material-icons-outlined">layers</span>
                 </div>
-                <div class="header-titles">
+                <div class="brand-text">
                     <h1>Composite Line Upgrade</h1>
-                    <span class="subtitle">Customer Company Name</span>
+                    <div class="company-name">Customer Company Name</div>
                 </div>
             </div>
-            <div class="header-right">
-                <span class="invited-by">Invited by: &lt;Salesperson Name&gt;</span>
-                <div class="verified-badge">
-                    <span class="material-icons-outlined">open_in_new</span>
+
+            <div class="header-meta">
+                <div class="meta-item">Invited by: John Smith</div>
+                <div class="meta-item badge-verified">
+                    <span class="material-icons-outlined" style="font-size: 1.2rem;">check_box</span>
                     Verified Access
                 </div>
-                <div class="status-badge active">Active</div>
+                <div class="badge-active">Active ></div>
             </div>
         </header>
 
-        <div class="main-layout">
-            <!-- Main Content Area -->
-            <main class="content-area">
+        <!-- Top Grid: Context & Actions -->
+        <div class="dashboard-grid">
 
-                <!-- Central Query Card -->
-                <div class="query-card-container">
-                    <div class="query-card glow-border">
-                        <div class="query-content">
-                            <h2>Request Support<br>Get help from our team</h2>
+            <!-- Left: Project Context -->
+            <div class="card context-card">
+                <div class="card-header">
+                    <span class="material-icons-outlined">feed</span>
+                    Project Context
+                </div>
+                <div class="context-details">
+                    <h3>Application: Structural Bonding</h3>
+                    <h3>Industry: Automotive</h3>
+                </div>
+                <div class="context-info">
+                    This room contains verified information selected for this project.
+                    <br>All questions and answers are shared with participants.
+                </div>
+            </div>
 
-                            <div class="suggestion-chips">
-                                <button class="chip">Technical Support</button>
-                                <button class="chip">Sales Inquiry</button>
-                                <button class="chip">Schedule Call</button>
-                            </div>
-
-                            <div class="verified-footer">
-                                <span class="material-icons-outlined">verified_user</span>
-                                Powered by verified content only.
-                            </div>
-                        </div>
+            <!-- Right: Action Menu -->
+            <div class="card actions-card">
+                <a href="index.html" class="action-item">
+                    <div class="action-left">
+                        <span class="material-icons-outlined icon-teal">group</span>
+                        Participants (3)
                     </div>
-                </div>
+                    <span class="material-icons-outlined icon-gray">chevron_right</span>
+                </a>
+                <a href="index.html" class="action-item">
+                    <div class="action-left">
+                        <span class="material-icons-outlined icon-blue">history_edu</span>
+                        Q&A History
+                    </div>
+                    <span class="material-icons-outlined icon-gray">chevron_right</span>
+                </a>
+                <a href="request-support.html" class="action-item" style="background: #f1f5f9;">
+                    <div class="action-left">
+                        <span class="material-icons-outlined icon-teal">person_add</span>
+                        Request Support
+                    </div>
+                    <span class="material-icons-outlined icon-gray">chevron_right</span>
+                </a>
+                <a href="resources.html" class="action-item">
+                    <div class="action-left">
+                        <span class="material-icons-outlined icon-blue">description</span>
+                        Resources
+                    </div>
+                    <span class="material-icons-outlined icon-gray">chevron_right</span>
+                </a>
+            </div>
 
-                <div class="helper-text">
-                    Your internal team members with verified access can view this space.
-                </div>
-
-                <!-- Bottom Navigation -->
-                <nav class="bottom-nav">
-                    <a href="overview.html" class="nav-item" style="text-decoration:none;">Overview</a>
-                    <a href="resources.html" class="nav-item" style="text-decoration:none;">Resources</a>
-                    <a href="index.html" class="nav-item" style="text-decoration:none;">Q&A History</a>
-                    <a href="request-support.html" class="nav-item active" style="text-decoration:none;">Request
-                        Support</a>
-                    <div class="active-indicator" style="left: 75%; transform: translateX(0);"></div>
-                </nav>
-
-                <div class="footer-note">
-                    Powered by structured, verified content. No hallucinations.
-                </div>
-            </main>
-
-            <!-- Right Sidebar -->
-            <aside class="sidebar-right">
-                <div class="sidebar-buttons">
-                    <a href="datasheets.html" class="sidebar-btn" style="text-decoration: none;">
-                        <span class="material-icons-outlined">hexagon</span>
-                        Datasheets
-                    </a>
-                    <a href="tds-msds.html" class="sidebar-btn" style="text-decoration: none;">
-                        <span class="material-icons-outlined">no_encryption</span>
-                        (TDS / MSDS)
-                    </a>
-                    <a href="case-studies.html" class="sidebar-btn" style="text-decoration: none;">
-                        <span class="material-icons-outlined">all_inclusive</span>
-                        Case Studies
-                    </a>
-                    <a href="application-videos.html" class="sidebar-btn" style="text-decoration: none;">
-                        <span class="material-icons-outlined">hexagon</span>
-                        Application Videos
-                    </a>
-                    <a href="design-guidelines.html" class="sidebar-btn" style="text-decoration: none;">
-                        <span class="material-icons-outlined">hexagon</span>
-                        Design Guidelines
-                    </a>
-                    <a href="prototype-request.html" class="sidebar-btn" style="text-decoration: none;">
-                        <span class="material-icons-outlined">hexagon</span>
-                        Prototype Request
-                    </a>
-                </div>
-            </aside>
         </div>
+
+        <!-- Middle: Request Support Section -->
+        <div class="card search-section">
+            <div class="search-title">Request Support</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem; padding-left: 0.5rem;">
+                Get specialized help from our engineering team.
+            </div>
+
+            <div class="support-grid">
+                <div class="support-action-card">
+                    <span class="material-icons-outlined support-icon">build</span>
+                    <span class="support-title">Technical Support</span>
+                    <span class="support-desc">Issues with application or process</span>
+                </div>
+                <div class="support-action-card">
+                    <span class="material-icons-outlined support-icon"
+                        style="color: var(--accent-teal);">shopping_cart</span>
+                    <span class="support-title">Sales Inquiry</span>
+                    <span class="support-desc">Pricing and availability</span>
+                </div>
+                <div class="support-action-card">
+                    <span class="material-icons-outlined support-icon" style="color: #6366f1;">calendar_today</span>
+                    <span class="support-title">Schedule Call</span>
+                    <span class="support-desc">Book time with an engineer</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom: Relevant Info (Optional or kept for consisteny) -->
+        <div class="bottom-section">
+            <div class="tabs-header">
+                <button class="tab-btn active">Overview</button>
+            </div>
+
+            <div class="card" style="border:none; box-shadow:none; padding:0; background:transparent;">
+                <div class="card-header"
+                    style="text-transform:none; color:var(--text-primary); font-size:1.1rem; margin-bottom:1rem;">
+                    Relevant verified information
+                </div>
+
+                <div class="content-list">
+                    <!-- Item 1 -->
+                    <a href="#" class="file-item">
+                        <div class="file-info">
+                            <span class="material-icons-outlined file-icon">article</span>
+                            Curing Process - Application Guide
+                        </div>
+                        <div class="view-action">
+                            View PDF <span class="material-icons-outlined">chevron_right</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer class="app-footer">
+            Powered by structured verified content. No hallucinations.
+        </footer>
+
     </div>
-    <script src="script.js"></script>
+
 </body>
 
 </html>
