@@ -85,24 +85,55 @@
                 Grant verified project access to a team member.
             </div>
 
-            <div style="max-width: 500px; margin: 0 auto; display:flex; flex-direction:column; gap:1rem;">
-                <input type="email" placeholder="Colleague's Work Email" class="search-input"
+            <form style="max-width: 500px; margin: 0 auto; display:flex; flex-direction:column; gap:1rem;"
+                onsubmit="event.preventDefault(); simulateInvite();">
+                <input id="invite-email" type="email" placeholder="Colleague's Work Email" class="search-input" required
                     style="background:#f1f5f9; padding: 1rem; border-radius:8px;">
                 <div style="display:flex; gap:1rem;">
-                    <input type="text" placeholder="First Name" class="search-input"
+                    <input id="invite-fname" type="text" placeholder="First Name" class="search-input" required
                         style="background:#f1f5f9; padding: 1rem; border-radius:8px; width:50%;">
-                    <input type="text" placeholder="Last Name" class="search-input"
+                    <input id="invite-lname" type="text" placeholder="Last Name" class="search-input" required
                         style="background:#f1f5f9; padding: 1rem; border-radius:8px; width:50%;">
                 </div>
-                <button class="pill"
-                    style="width:100%; text-align:center; background: var(--accent-teal); color:white; padding:1rem; border-radius:8px; margin-top:0.5rem;">
+                <button type="submit" class="pill" id="invite-btn"
+                    style="width:100%; text-align:center; background: var(--accent-teal); color:white; padding:1rem; border-radius:8px; margin-top:0.5rem; border:none; font-size:1rem;">
                     Send Invite
                 </button>
-            </div>
+            </form>
         </div>
 
         <footer class="app-footer">Powered by structured verified content. No hallucinations.</footer>
     </div>
+
+    <!-- Script for Chat Widget and Page Logic -->
+    <script src="script.js"></script>
+    <script>
+        function simulateInvite() {
+            const btn = document.getElementById('invite-btn');
+            const email = document.getElementById('invite-email').value;
+            const originalText = btn.innerHTML;
+
+            btn.disabled = true;
+            btn.innerHTML = '<span class="material-icons-outlined" style="font-size:1.2rem; vertical-align:middle; animation: spin 1s linear infinite;">refresh</span> Sending...';
+
+            // Add spin animation style inline if not exists
+            if (!document.getElementById('spin-style')) {
+                const style = document.createElement('style');
+                style.id = 'spin-style';
+                style.innerHTML = '@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }';
+                document.head.appendChild(style);
+            }
+
+            setTimeout(() => {
+                alert(`Invitation sent to ${email} successfully!`);
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                document.getElementById('invite-email').value = '';
+                document.getElementById('invite-fname').value = '';
+                document.getElementById('invite-lname').value = '';
+            }, 1000);
+        }
+    </script>
 </body>
 
 </html>
