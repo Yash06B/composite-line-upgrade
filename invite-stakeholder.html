@@ -109,7 +109,7 @@
         (function () {
             // Initialize EmailJS with Public Key (Placeholder)
             // USER: Replace "YOUR_PUBLIC_KEY" with your actual key from emailjs.com
-            emailjs.init("YOUR_PUBLIC_KEY");
+            emailjs.init("F-Xpvy0ymQMxKo5Eb");
         })();
     </script>
 
@@ -138,40 +138,40 @@
                 document.head.appendChild(style);
             }
 
-            // Simulate EmailJS Send (Replace this block with actual send call below when ready)
-            setTimeout(() => {
-                // Success Scenario
-                console.log(`Simulated Email Sent to: ${email}`);
+            // Perform EmailJS Send
+            const templateParams = {
+                to_email: email,
+                to_name: name,
+                from_name: "Composite Line App",
+                message: "You have been invited to join the Composite Line Upgrade project."
+            };
 
-                // Show Toast instead of Alert
-                if (window.showToast) {
-                    window.showToast(`Invitation sent to ${name}`);
-                } else {
-                    alert(`Invitation sent to ${name}`); // Fallback
-                }
-
-                /* ACTUAL EMAILJS CODE (Uncomment and fill keys to activate)
-                const templateParams = {
-                    to_email: email,
-                    to_name: name,
-                    from_name: "Composite Line App"
-                };
-                
-                emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
-                    .then(function(response) {
+            emailjs.send('service_t5s521h', 'template_1r7xyoc', templateParams)
+                .then(function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    if (window.showToast) {
                         window.showToast(`Invitation sent to ${name}`);
-                    }, function(error) {
-                       window.showToast(`Failed to send: ${error.text}`);
-                    });
-                */
+                    } else {
+                        alert(`Invitation sent to ${name}`);
+                    }
+                    resetForm();
+                }, function (error) {
+                    console.log('FAILED...', error);
+                    if (window.showToast) {
+                        window.showToast(`Failed to send: ${error.text || 'Unknown Error'}`);
+                    } else {
+                        alert(`Failed to send.`);
+                    }
+                    resetForm();
+                });
 
-                // Reset Form
+            function resetForm() {
                 btn.innerHTML = originalText;
                 btn.disabled = false;
                 emailInput.value = '';
                 fnameInput.value = '';
                 lnameInput.value = '';
-            }, 1000);
+            }
         }
     </script>
 </body>
