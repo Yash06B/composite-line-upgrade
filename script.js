@@ -79,24 +79,50 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    function handleUserMessage(msg) {
+    async function handleUserMessage(msg) {
         if (!msg.trim()) return;
 
         // Add User Message
         addMessage(msg, 'user');
         chatInput.value = '';
 
-        // Simulate AI Thinking
-        setTimeout(() => {
-            const response = getBotResponse(msg);
-            addMessage(response, 'ai');
-        }, 600);
+        // Add Loading Indicator
+        const loadingId = addMessage('Thinking...', 'ai', true);
+
+        try {
+            // Call Ollama API
+            const response = await fetch('http://localhost:11434/api/generate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    model: "llama3.2:3b",
+                    prompt: `You are a helpful project assistant for the 'Composite Line Upgrade' project. Answer concisely. User: ${msg}`,
+                    stream: false
+                })
+            });
+
+            if (!response.ok) throw new Error('Ollama not reachable');
+
+            const data = await response.json();
+            const aiText = data.response;
+
+            // Remove Loading & content update
+            updateMessage(loadingId, aiText);
+
+        } catch (error) {
+            console.warn("Ollama connection failed, falling back to static:", error);
+            // Fallback to static logic
+            const fallbackResponse = getStaticResponse(msg);
+            updateMessage(loadingId, fallbackResponse + " <br><em style='font-size:0.8em; color:#94a3b8;'>(Offline Mode - Ollama not detected)</em>");
+        }
     }
 
-    function addMessage(text, sender) {
+    function addMessage(text, sender, isLoading = false) {
         const msgDiv = document.createElement('div');
         msgDiv.classList.add('chat-message');
         msgDiv.style.flexDirection = sender === 'user' ? 'row-reverse' : 'row';
+        const msgId = 'msg-' + Date.now();
+        msgDiv.id = msgId;
 
         const content = `
             <div class="chat-avatar" style="${sender === 'user' ? 'background:var(--accent-teal); color:white;' : ''}">
@@ -109,26 +135,25 @@ document.addEventListener('DOMContentLoaded', () => {
         msgDiv.innerHTML = content;
         document.getElementById('chat-body').appendChild(msgDiv);
 
-        // Auto-scroll to bottom
         const chatBody = document.getElementById('chat-body');
         chatBody.scrollTop = chatBody.scrollHeight;
+
+        return msgId;
     }
 
-    function getBotResponse(input) {
+    function updateMessage(msgId, newText) {
+        const msgDiv = document.getElementById(msgId);
+        if (msgDiv) {
+            msgDiv.querySelector('.message-card p').innerHTML = newText;
+        }
+    }
+
+    function getStaticResponse(input) {
         const lower = input.toLowerCase();
-        if (lower.includes('timeline') || lower.includes('schedule')) {
-            return "The project timeline is currently on track. Phase 1 completes next Friday.";
-        }
-        if (lower.includes('budget') || lower.includes('cost')) {
-            return "The current budget utilization is 45%. We are within the allocated limits.";
-        }
-        if (lower.includes('stakeholder') || lower.includes('who')) {
-            return "Key stakeholders include the Engineering Lead, Product Manager, and Safety Compliance Officer.";
-        }
-        if (lower.includes('hello') || lower.includes('hi')) {
-            return "Hello! I'm here to assist with project details.";
-        }
-        return "I can help with timelines, budgets, and stakeholder information. Please ask specifically about those.";
+        if (lower.includes('timeline') || lower.includes('schedule')) return "The project timeline is currently on track. Phase 1 completes next Friday.";
+        if (lower.includes('budget') || lower.includes('cost')) return "The current budget utilization is 45%. We are within the allocated limits.";
+        if (lower.includes('stakeholder')) return "Key stakeholders include the Engineering Lead, Product Manager, and Safety Compliance Officer.";
+        return "I can help with timelines, budgets, and stakeholder information.";
     }
 
     // Toast Notification Logic
