@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.warn("Ollama connection failed/timed out, falling back to static:", error);
             // Fallback to static logic
             const fallbackResponse = getStaticResponse(msg);
-            updateMessage(loadingId, fallbackResponse + " <br><em style='font-size:0.8em; color:#94a3b8;'>(Offline Mode - Ollama not detected)</em>");
+            updateMessage(loadingId, fallbackResponse + " <br><em style='font-size:0.8em; color:#94a3b8;'>(Offline Mode - Ollama not detected)</em>", true);
         }
     }
 
@@ -136,10 +136,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${sender === 'user' ? 'ME' : 'AI'}
             </div>
             <div class="message-card" style="${sender === 'user' ? 'background:#eff6ff; border-color:#dbeafe;' : ''}">
-                <p>${text}</p>
+                <p></p>
             </div>
         `;
         msgDiv.innerHTML = content;
+
+        // Use textContent for safety (unless it's the loading state which we control)
+        msgDiv.querySelector('p').textContent = text;
+
         document.getElementById('chat-body').appendChild(msgDiv);
 
         const chatBody = document.getElementById('chat-body');
@@ -148,10 +152,14 @@ document.addEventListener('DOMContentLoaded', () => {
         return msgId;
     }
 
-    function updateMessage(msgId, newText) {
+    function updateMessage(msgId, newText, allowHtml = false) {
         const msgDiv = document.getElementById(msgId);
         if (msgDiv) {
-            msgDiv.querySelector('.message-card p').innerHTML = newText;
+            if (allowHtml) {
+                msgDiv.querySelector('.message-card p').innerHTML = newText;
+            } else {
+                msgDiv.querySelector('.message-card p').innerText = newText;
+            }
         }
     }
 
