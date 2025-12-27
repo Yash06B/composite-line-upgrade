@@ -90,6 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const loadingId = addMessage('Thinking...', 'ai', true);
 
         try {
+            // Setup Timeout (5 seconds)
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 5000);
+
             // Call Ollama API
             const response = await fetch('http://localhost:11434/api/generate', {
                 method: 'POST',
@@ -98,8 +102,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     model: "llama3.2:3b",
                     prompt: `You are a helpful project assistant for the 'Composite Line Upgrade' project. Answer concisely. User: ${msg}`,
                     stream: false
-                })
+                }),
+                signal: controller.signal
             });
+
+            clearTimeout(timeoutId);
 
             if (!response.ok) throw new Error('Ollama not reachable');
 
@@ -110,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
             updateMessage(loadingId, aiText);
 
         } catch (error) {
-            console.warn("Ollama connection failed, falling back to static:", error);
+            console.warn("Ollama connection failed/timed out, falling back to static:", error);
             // Fallback to static logic
             const fallbackResponse = getStaticResponse(msg);
             updateMessage(loadingId, fallbackResponse + " <br><em style='font-size:0.8em; color:#94a3b8;'>(Offline Mode - Ollama not detected)</em>");
