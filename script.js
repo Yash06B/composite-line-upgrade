@@ -130,4 +130,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         return "I can help with timelines, budgets, and stakeholder information. Please ask specifically about those.";
     }
+
+    // Toast Notification Logic
+    window.showToast = function (message) {
+        // Remove existing toast if any
+        const existing = document.querySelector('.toast-notification');
+        if (existing) existing.remove();
+
+        const toast = document.createElement('div');
+        toast.className = 'toast-notification';
+        toast.innerHTML = `
+            <span class="material-icons-outlined toast-icon">check_circle</span>
+            <span>${message}</span>
+        `;
+        document.body.appendChild(toast);
+
+        // Animate In
+        setTimeout(() => toast.classList.add('show'), 100);
+
+        // Remove after 3s
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 400);
+        }, 3000);
+    };
 });

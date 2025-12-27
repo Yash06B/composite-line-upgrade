@@ -103,14 +103,30 @@
         <footer class="app-footer">Powered by structured verified content. No hallucinations.</footer>
     </div>
 
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // Initialize EmailJS with Public Key (Placeholder)
+            // USER: Replace "YOUR_PUBLIC_KEY" with your actual key from emailjs.com
+            emailjs.init("YOUR_PUBLIC_KEY");
+        })();
+    </script>
+
     <!-- Script for Chat Widget and Page Logic -->
     <script src="script.js"></script>
     <script>
         function simulateInvite() {
             const btn = document.getElementById('invite-btn');
-            const email = document.getElementById('invite-email').value;
+            const emailInput = document.getElementById('invite-email');
+            const fnameInput = document.getElementById('invite-fname');
+            const lnameInput = document.getElementById('invite-lname');
             const originalText = btn.innerHTML;
 
+            const email = emailInput.value;
+            const name = `${fnameInput.value} ${lnameInput.value}`;
+
+            // Visual Feedback
             btn.disabled = true;
             btn.innerHTML = '<span class="material-icons-outlined" style="font-size:1.2rem; vertical-align:middle; animation: spin 1s linear infinite;">refresh</span> Sending...';
 
@@ -122,13 +138,39 @@
                 document.head.appendChild(style);
             }
 
+            // Simulate EmailJS Send (Replace this block with actual send call below when ready)
             setTimeout(() => {
-                alert(`Invitation sent to ${email} successfully!`);
+                // Success Scenario
+                console.log(`Simulated Email Sent to: ${email}`);
+
+                // Show Toast instead of Alert
+                if (window.showToast) {
+                    window.showToast(`Invitation sent to ${name}`);
+                } else {
+                    alert(`Invitation sent to ${name}`); // Fallback
+                }
+
+                /* ACTUAL EMAILJS CODE (Uncomment and fill keys to activate)
+                const templateParams = {
+                    to_email: email,
+                    to_name: name,
+                    from_name: "Composite Line App"
+                };
+                
+                emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+                    .then(function(response) {
+                        window.showToast(`Invitation sent to ${name}`);
+                    }, function(error) {
+                       window.showToast(`Failed to send: ${error.text}`);
+                    });
+                */
+
+                // Reset Form
                 btn.innerHTML = originalText;
                 btn.disabled = false;
-                document.getElementById('invite-email').value = '';
-                document.getElementById('invite-fname').value = '';
-                document.getElementById('invite-lname').value = '';
+                emailInput.value = '';
+                fnameInput.value = '';
+                lnameInput.value = '';
             }, 1000);
         }
     </script>
