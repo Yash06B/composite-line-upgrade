@@ -89,38 +89,54 @@ document.addEventListener('DOMContentLoaded', () => {
         // Add Loading Indicator
         const loadingId = addMessage('Thinking...', 'ai', true);
 
-        try {
-            // Setup Timeout (5 seconds)
-            const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 5000);
+        // Get API Key from config
+        const apiKey = typeof CONFIG !== 'undefined' ? CONFIG.GROQ_API_KEY : "YOUR_GROQ_API_KEY";
 
-            // Call Ollama API
-            const response = await fetch('http://localhost:11434/api/generate', {
+        try {
+            if (apiKey === "YOUR_GROQ_API_KEY") {
+                throw new Error("Missing API Key");
+            }
+
+            // Call Groq API
+            const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
+                },
                 body: JSON.stringify({
-                    model: "llama3.2:3b",
-                    prompt: `You are a helpful project assistant for the 'Composite Line Upgrade' project. Answer concisely. User: ${msg}`,
+                    messages: [
+                        { role: "system", content: "You are a helpful project assistant for the 'Composite Line Upgrade' project. Answer concisely." },
+                        { role: "user", content: msg }
+                    ],
+                    model: "llama3-8b-8192",
+                    temperature: 0.7,
+                    max_tokens: 1024,
                     stream: false
-                }),
-                signal: controller.signal
+                })
             });
 
-            clearTimeout(timeoutId);
-
-            if (!response.ok) throw new Error('Ollama not reachable');
+            if (!response.ok) throw new Error(`Groq API Error: ${response.statusText}`);
 
             const data = await response.json();
-            const aiText = data.response;
+            const aiText = data.choices[0].message.content;
 
             // Remove Loading & content update
             updateMessage(loadingId, aiText);
 
         } catch (error) {
-            console.warn("Ollama connection failed/timed out, falling back to static:", error);
+            console.warn("Groq connection failed:", error);
+
+            let errorMessage = "";
+            if (error.message === "Missing API Key") {
+                errorMessage = "<br><em style='font-size:0.8em; color:#ef4444;'>Error: Please add your Groq API Key in config.js</em>";
+            } else {
+                errorMessage = "<br><em style='font-size:0.8em; color:#94a3b8;'>(Offline Mode - API unavailable)</em>";
+            }
+
             // Fallback to static logic
             const fallbackResponse = getStaticResponse(msg);
-            updateMessage(loadingId, fallbackResponse + " <br><em style='font-size:0.8em; color:#94a3b8;'>(Offline Mode - Ollama not detected)</em>", true);
+            updateMessage(loadingId, fallbackResponse + errorMessage, true);
         }
     }
 
