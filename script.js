@@ -110,10 +110,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 body: JSON.stringify({
                     messages: [
-                        { role: "system", content: "You are a helpful project assistant for the 'Composite Line Upgrade' project. Answer concisely." },
+                        {
+                            role: "system",
+                            content: `You are a helpful project assistant for the 'Composite Line Upgrade' project. 
+                            Current Date: ${new Date().toLocaleDateString()}. 
+                            Knowledge Cutoff: Late 2024. 
+                            Answer concisely.`
+                        },
                         { role: "user", content: msg }
                     ],
-                    model: "llama-3.1-8b-instant",
+                    model: "llama-3.3-70b-versatile",
                     temperature: 0.7,
                     max_tokens: 1024,
                     stream: false
