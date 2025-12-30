@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         { role: "system", content: "You are a helpful project assistant for the 'Composite Line Upgrade' project. Answer concisely." },
                         { role: "user", content: msg }
                     ],
-                    model: "llama3-8b-8192",
+                    model: "llama-3.1-8b-instant",
                     temperature: 0.7,
                     max_tokens: 1024,
                     stream: false
