@@ -97,6 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error("Missing API Key");
             }
 
+            // Setup Timeout (10 seconds)
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 10000);
+
             // Call Groq API
             const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
                 method: 'POST',
@@ -113,8 +117,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     temperature: 0.7,
                     max_tokens: 1024,
                     stream: false
-                })
+                }),
+                signal: controller.signal
             });
+
+            clearTimeout(timeoutId);
 
             if (!response.ok) throw new Error(`Groq API Error: ${response.statusText}`);
 
