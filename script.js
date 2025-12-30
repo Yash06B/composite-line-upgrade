@@ -138,7 +138,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (error.message === "Missing API Key") {
                 errorMessage = "<br><em style='font-size:0.8em; color:#ef4444;'>Error: Please add your Groq API Key in config.js</em>";
             } else {
-                errorMessage = "<br><em style='font-size:0.8em; color:#94a3b8;'>(Offline Mode - API unavailable)</em>";
+                // DEBUG: Show actual error to user
+                errorMessage = `<br><em style='font-size:0.8em; color:#ef4444;'>Debug Error: ${error.message}</em>`;
             }
 
             // Fallback to static logic
