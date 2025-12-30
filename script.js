@@ -123,7 +123,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             clearTimeout(timeoutId);
 
-            if (!response.ok) throw new Error(`Groq API Error: ${response.statusText}`);
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                const detailedMsg = errorData.error?.message || response.statusText || `Status ${response.status}`;
+                throw new Error(`Groq API Error: ${detailedMsg}`);
+            }
 
             const data = await response.json();
             const aiText = data.choices[0].message.content;
