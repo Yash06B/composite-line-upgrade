@@ -25,31 +25,36 @@
             </div>
             <!-- New Auth Nav (Replaces Meta) -->
             <div class="auth-nav">
-                <a href="login.html" class="btn-login-bubble">Login</a>
+                <button id="auth-btn" class="btn-login-bubble" onclick="handleAuthAction()">Login</button>
             </div>
         </header>
 
         <div class="main-layout">
             <!-- Main Content Area -->
-            <main class="content-area">
+            <!-- Main Content -->
+            <main class="page-content">
+                <div class="page-header">
+                    <h2>Project Overview</h2>
+                    <div class="breadcrumbs">
+                        <a href="index.html">Dashboard</a> > Overview
+                    </div>
+                </div>
 
-                <!-- Central Query Card -->
-                <div class="query-card-container">
-                    <div class="query-card glow-border">
-                        <div class="query-content">
-                            <h2>Project Overview<br>Composite Line Upgrade Solution</h2>
-
-                            <div class="suggestion-chips">
-                                <button class="chip">Project Timeline</button>
-                                <button class="chip">Key Deliverables</button>
-                                <button class="chip">Technical Specifications</button>
-                            </div>
-
-                            <div class="verified-footer">
-                                <span class="material-icons-outlined">verified_user</span>
-                                Powered by verified content only.
-                            </div>
-                        </div>
+                <div class="card">
+                    <div class="context-details">
+                        <h3>Application: Structural Bonding</h3>
+                        <h3>Industry: Automotive</h3>
+                    </div>
+                    <div class="context-info" style="margin-top:1rem;">
+                        This project focuses on upgrading the existing composite bonding line to increase throughput by
+                        20% while maintaining ISO 9001 compliance.
+                        <br><br>
+                        <strong>Key Objectives:</strong>
+                        <ul>
+                            <li>Reduce curing cycle time</li>
+                            <li>Automate adhesive dispensing</li>
+                            <li>Integrate real-time quality monitoring</li>
+                        </ul>
                     </div>
                 </div>
 
