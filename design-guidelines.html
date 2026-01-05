@@ -71,38 +71,47 @@
             </div>
         </div>
 
-        <!-- Middle: Content Section -->
-        <div class="card search-section">
-            <div class="search-title">Design Guidelines</div>
-            <div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem; padding-left: 0.5rem;">
-                Best practices for joint design and material selection.
+        <!-- Main Content -->
+        <main class="page-content">
+            <div class="page-header">
+                <h2>Design Guidelines</h2>
+                <div class="breadcrumbs">
+                    <a href="index.html">Dashboard</a> > Design Guidelines
+                </div>
             </div>
 
-            <div class="content-list">
-                <!-- Item 1 -->
-                <a href="#" class="file-item">
-                    <div class="file-info">
-                        <span class="material-icons-outlined file-icon">design_services</span>
-                        Joint Design Fundamentals
-                    </div>
-                    <div class="view-action">Download PDF <span class="material-icons-outlined">download</span></div>
-                </a>
-
-                <!-- Item 2 -->
-                <a href="#" class="file-item">
-                    <div class="file-info">
-                        <span class="material-icons-outlined file-icon">palette</span>
-                        Surface Preparation Standard
-                    </div>
-                    <div class="view-action">Download PDF <span class="material-icons-outlined">download</span></div>
-                </a>
+            <div class="card">
+                <div class="content-list">
+                    <a href="#" class="file-item">
+                        <div class="file-info">
+                            <span class="material-icons-outlined file-icon">design_services</span>
+                            Bond Joint Configuration Guide
+                        </div>
+                        <div class="view-action">View Guide <span class="material-icons-outlined">chevron_right</span>
+                        </div>
+                    </a>
+                    <a href="#" class="file-item">
+                        <div class="file-info">
+                            <span class="material-icons-outlined file-icon">format_paint</span>
+                            Surface Preparation Standards
+                        </div>
+                        <div class="view-action">View Guide <span class="material-icons-outlined">chevron_right</span>
+                        </div>
+                    </a>
+                </div>
             </div>
-        </div>
+        </main>
 
         <footer class="app-footer">Powered by structured verified content. No hallucinations.</footer>
     </div>
-    <script src="config.js"></script>
 
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+
+    <script src="config.js"></script>
+    <script src="firebase_config.js"></script>
+    <script src="auth.js"></script>
     <script src="script.js"></script>
 </body>
 
