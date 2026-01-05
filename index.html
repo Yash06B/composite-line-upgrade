@@ -29,7 +29,7 @@
             <!-- New Auth Nav (Replaces Meta) -->
             <!-- New Auth Nav (Replaces Meta) -->
             <div class="auth-nav">
-                <a href="login.html" class="btn-login-bubble">Login</a>
+                <button id="auth-btn" class="btn-login-bubble" onclick="handleAuthAction()">Login</button>
             </div>
         </header>
 
@@ -163,7 +163,13 @@
 
     </div>
 
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+
     <script src="config.js"></script>
+    <script src="firebase_config.js"></script>
+    <script src="auth.js"></script>
     <script src="script.js"></script>
 </body>
 

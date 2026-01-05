@@ -42,18 +42,42 @@ async function logout() {
 // Auth State Observer
 auth.onAuthStateChanged((user) => {
     const isLoginPage = window.location.pathname.includes('login.html') || window.location.pathname.includes('signup.html');
+    const authBtn = document.getElementById('auth-btn');
 
     if (user) {
         // User is signed in
         console.log("User is signed in:", user.email);
+
+        if (authBtn) {
+            authBtn.textContent = 'Logout';
+            authBtn.onclick = logout;
+        }
+
         if (isLoginPage) {
             window.location.href = 'index.html'; // Redirect to dashboard
         }
     } else {
         // User is signed out
         console.log("User is signed out");
+
+        if (authBtn) {
+            authBtn.textContent = 'Login';
+            authBtn.onclick = () => window.location.href = 'login.html';
+        }
+
         if (!isLoginPage) {
-            window.location.href = 'login.html'; // Redirect to login
+            // Uncomment next line to Force Login (Protect Dashboard)
+            // window.location.href = 'login.html'; 
         }
     }
 });
+
+// Global function for HTML onclick
+window.handleAuthAction = function () {
+    const user = firebase.auth().currentUser;
+    if (user) {
+        logout();
+    } else {
+        window.location.href = 'login.html';
+    }
+};
