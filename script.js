@@ -104,6 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // 1. RAG: Retrieve Relevant Context
             const context = await getRelevantContext(msg);
 
+            // 1. RAG: Retrieve Relevant Context
+            const context = await getRelevantContext(msg);
+
             // Call Groq API
             const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
                 method: 'POST',
