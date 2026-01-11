@@ -258,8 +258,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 .filter(chunk => chunk.length > 50);
 
             console.log(`Manual Loaded: ${knowledgeBase.length} chunks.`);
+            if (typeof showToast === 'function') showToast(`System: Manual Loaded (${knowledgeBase.length} chunks)`);
         } catch (e) {
             console.warn("Could not load knowledge base:", e);
+            if (typeof showToast === 'function') showToast(`Error: Could not load Manual (${e.message})`);
         }
     }
 
