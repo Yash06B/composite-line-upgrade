@@ -1,5 +1,4 @@
 // Configuration file for API keys
 // This file contains your Groq API key
-const CONFIG = {
-    GROQ_API_KEY: "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"
+GROQ_API_KEY: "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"
 };
