@@ -239,4 +239,56 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => toast.remove(), 400);
         }, 3000);
     };
+    // --- Client-Side RAG (Search) implementation ---
+    let knowledgeBase = [];
+
+    async function loadKnowledgeBase() {
+        if (knowledgeBase.length > 0) return; // Already loaded
+
+        try {
+            console.log("Loading Project Manual...");
+            const response = await fetch('project_docs/Owners_Manual.txt');
+            if (!response.ok) throw new Error("Manual not found");
+            const text = await response.text();
+
+            // Simple Chunking Strategy: Split by double newlines (paragraphs)
+            // Filter out short chunks to reduce noise
+            knowledgeBase = text.split(/\n\s*\n/)
+                .map(chunk => chunk.trim())
+                .filter(chunk => chunk.length > 50);
+
+            console.log(`Manual Loaded: ${knowledgeBase.length} chunks.`);
+        } catch (e) {
+            console.warn("Could not load knowledge base:", e);
+        }
+    }
+
+    // Initialize fetching immediately (lazy load)
+    loadKnowledgeBase();
+
+    async function getRelevantContext(query) {
+        if (knowledgeBase.length === 0) return "";
+
+        const queryTerms = query.toLowerCase().split(/\s+/).filter(w => w.length > 3);
+        if (queryTerms.length === 0) return "";
+
+        // Scoring: Count keyword matches in each chunk
+        const scoredChunks = knowledgeBase.map(chunk => {
+            const chunkLower = chunk.toLowerCase();
+            let score = 0;
+            queryTerms.forEach(term => {
+                if (chunkLower.includes(term)) score += 1;
+            });
+            return { chunk, score };
+        });
+
+        // Sort by score (descending) and take top 3
+        const topChunks = scoredChunks
+            .filter(item => item.score > 0)
+            .sort((a, b) => b.score - a.score)
+            .slice(0, 3)
+            .map(item => item.chunk);
+
+        return topChunks.join("\n---\n");
+    }
 });
