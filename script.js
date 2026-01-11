@@ -101,6 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const controller = new AbortController();
             const timeoutId = setTimeout(() => controller.abort(), 10000);
 
+            // 1. RAG: Retrieve Relevant Context
+            const context = await getRelevantContext(msg);
+
             // Call Groq API
             const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
                 method: 'POST',
@@ -112,15 +115,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     messages: [
                         {
                             role: "system",
-                            content: `You are a helpful project assistant for the 'Composite Line Upgrade' project. 
-                            Current Date: ${new Date().toLocaleDateString()}. 
-                            Knowledge Cutoff: Late 2024. 
-                            Answer concisely.`
+                            content: `You are a specialized Project Assistant for the 'Composite Line Upgrade'.
+                            
+                            STRICT GUARDRAILS:
+                            1. You may ONLY answer questions related to: Composite Materials, Industrial Adhesives, Assembly Line Machines, and Project Management, and the provided MANUAL CONTEXT.
+                            2. You must REFUSE to answer questions about: Personal opinions, Politics, Competitor products (e.g. 3M, Loctite), or General knowledge unrelated to the project.
+                            3. CONFIDENTIALITY: Never share specific employee salaries, private keys, or passwords.
+                            
+                            MANUAL CONTEXT:
+                            ${context}
+                            
+                            Current Date: ${new Date().toLocaleDateString()}.
+                            If a user asks about an out-of-scope topic, reply: "I am restricted to discussing the Composite Line Upgrade project only."`
                         },
                         { role: "user", content: msg }
                     ],
                     model: "llama-3.1-8b-instant",
-                    temperature: 0.7,
+                    temperature: 0.5, // Lower temperature for factual accuracy
                     max_tokens: 1024,
                     stream: false
                 }),
