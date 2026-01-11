@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function getRelevantContext(query) {
         if (knowledgeBase.length === 0) return "";
 
-        const queryTerms = query.toLowerCase().split(/\s+/).filter(w => w.length > 3);
+        const queryTerms = query.toLowerCase().split(/\s+/).filter(w => w.length > 2);
         if (queryTerms.length === 0) return "";
 
         // Scoring: Count keyword matches in each chunk
